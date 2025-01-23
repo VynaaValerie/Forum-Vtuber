@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Lamaran Editor Xingster</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #00264d, #0059b3);
+            color: white;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 20px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input[type="text"], 
+        input[type="email"], 
+        input[type="date"], 
+        select, 
+        textarea, 
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+        }
+
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background: #0059b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #004080;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+                margin: 20px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            button {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulir Lamaran Xingster</h1>
+        <p>Harap lengkapi formulir berikut untuk melamar posisi pada kantor kami.</p>
+        <form id="formLamaran">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" name="Nama Lengkap" placeholder="Nama Depan, Tengah, Belakang" required>
+            
+            <label for="tglLahir">Tanggal Lahir</label>
+            <input type="date" id="tglLahir" name="Tanggal Lahir" required>
+
+            <label for="alamat">Alamat Saat Ini</label>
+            <input type="text" id="alamat1" name="Alamat Jalan" placeholder="Alamat Jalan">
+            <input type="text" id="alamat2" name="Alamat Jalan Baris ke-2" placeholder="Alamat Jalan Baris ke-2">
+            <input type="text" id="kota" name="Kabupaten/Kota" placeholder="Kabupaten/Kota">
+            <input type="text" id="provinsi" name="Provinsi" placeholder="Provinsi">
+            <input type="text" id="kodePos" name="Kode Pos" placeholder="Kode Pos">
+
+            <label for="email">Alamat Email</label>
+            <input type="email" id="email" name="Alamat Email" placeholder="contoh@contoh.com" required>
+
+            <label for="nomor">Nomor Telepon</label>
+            <input type="text" id="nomor" name="Nomor Telepon" placeholder="Nomor Telepon">
+
+            <label for="linkedin">LinkedIn</label>
+            <input type="text" id="linkedin" name="LinkedIn" placeholder="URL LinkedIn">
+
+            <label for="posisi">Posisi yang Dilamar</label>
+            <select id="posisi" name="Posisi yang Dilamar" required>
+                <option value="" disabled selected>Please Select</option>
+                <option value="Art">Art</option>
+                <option value="Rigging">Rigging</option>
+                <option value="Animasi">Animasi</option>
+                <option value="Editor AE">Editor AE</option>
+            </select>
+
+            <label for="sumber">Dari mana Anda mengetahui tentang kami?</label>
+            <select id="sumber" name="Sumber Informasi" required>
+                <option value="" disabled selected>Please Select</option>
+                <option value="Sosial Media">Sosial Media</option>
+                <option value="Website">Website</option>
+                <option value="Rekomendasi Teman">Rekomendasi Teman</option>
+            </select>
+
+            <label for="tglSiap">Tanggal Siap Bekerja</label>
+            <input type="date" id="tglSiap" name="Tanggal Siap Bekerja" required>
+
+            <label for="foto">Upload Foto Identitas</label>
+            <input type="file" id="foto" name="Upload Foto Identitas">
+
+            <label for="surat">Surat Pengantar</label>
+            <textarea id="surat" name="Surat Pengantar" placeholder="Tulis surat pengantar Anda..."></textarea>
+
+            <button type="button" onclick="kirimForm()">Kirim</button>
+        </form>
+    </div>
+
+    <script>
+        function kirimForm() {
+            const form = document.getElementById('formLamaran');
+            const formData = new FormData(form);
+            let body = '';
+            for (let [key, value] of formData.entries()) {
+                body += `${key}: ${value}\n`;
+            }
+
+            // Membuka aplikasi email
+            const email = 'kairuraxing@gmail.com';
+            const subject = 'Lamaran Editor Xingster';
+            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+    </script>
+</body>
+</html>
