@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dancing in the Dark</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('https://8030.us.kg/file/X1o6AYdcga8a.jpeg') no-repeat center center/cover;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 118dvh; /* Dynamic viewport height */
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 450px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5); /* Menambahkan latar belakang abu-abu transparan */
+            backdrop-filter: blur(10px); /* Efek blur lebih kuat */
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo img {
+            width: 100%;
+            max-width: 360px; /* Ukuran besar thumbnail */
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 4px solid white; /* Bingkai putih pada gambar */
+        }
+
+        .title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .button-container a {
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 12px;
+            background: linear-gradient(145deg, #3c9dd0, #217db8); /* Efek 3D gradasi */
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+        }
+
+        .button-container a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Styling khusus untuk tombol Special Link (warna ungu) */
+        .special-btn {
+            background: linear-gradient(145deg, #8a2be2, #6a0dad); /* Warna ungu */
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="https://files.catbox.moe/u4mcdi.jpg" alt="Thumbnail">
+        </div>
+        <div class="title">Dancing in the Dark</div>
+        <div class="subtitle">Twist in my reality</div>
+        <div class="button-container">
+            <a href="https://x.com/Xingkairura?t=8M65oRf1pnf0BpQlqhL4qA&s=09" target="_blank">Twitter</a>
+            <a href="https://www.tiktok.com/@xingkairura?_t=ZS-8tHlb0ARYnP&_r=1" target="_blank">TikTok</a>
+            <a href="https://www.youtube.com/@xingkairura" target="_blank">YouTube</a>
+            <a href="forum.html" target="_blank" class="special-btn">Special Link</a>
+            <a href="https://www.instagram.com/xingkairura?igsh=M3Z6dzI1ZnA5cG9w" target="_blank">Instagram</a>
+            <a href="https://discord.gg/h6GXTFjA" target="_blank">Discord</a>
+            <a href="https://bili.im/RSnIhaT" target="_blank">BiliBili</a>
+            <a href="https://whatsapp.com/channel/0029VaeRwMP3GJOz7wA2bY3p" target="_blank">WhatsApp</a>
+        </div>
+    </div>
+</body>
+</html>
